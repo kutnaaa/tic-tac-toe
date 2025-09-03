@@ -1,0 +1,89 @@
+body {
+    font-family: sans-serif;
+    background-color: #e0f2f1; /* Світло-м'ятний колір */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 500px; /* Збільшено ширину контейнера */
+}
+
+h1 {
+    font-family: 'Rubik Mono One', monospace;
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #333;
+    white-space: nowrap; /* Забороняємо перенос заголовка */
+}
+
+.options {
+    margin-bottom: 20px;
+    display: flex; /* Використовуємо flexbox для розміщення в один рядок */
+    justify-content: center; /* Центруємо елементи по горизонталі */
+}
+
+button, select {
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+    margin: 0 auto 20px; /* Центруємо дошку горизонтально */
+    width: 315px; /* Ширина дошки з урахуванням gap */
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.x {
+    color: red;
+}
+
+.o {
+    color: blue;
+}
+
+.win {
+    background-color: lightgreen;
+}
+
+.status {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Анімація */
+.cell.scale-in {
+    animation: scaleIn 0.2s ease-in-out;
+}
+
+@keyframes scaleIn {
+    0% { transform: scale(0); }
+        100% { transform: scale(1); }
+    }
